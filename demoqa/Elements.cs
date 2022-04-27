@@ -36,8 +36,9 @@ namespace demoqa
 
             }
 
-            public static void SubmitButton()
+            public static void SubmitButton(IJavaScriptExecutor js)
             {
+                js.ExecuteScript("window.scrollBy(0,300)");
                 SeleniumSetMethod.Click("Xpath", "//button[@class='btn btn-primary']");
             }
             public static void textboxRunner(IJavaScriptExecutor js)
@@ -52,7 +53,7 @@ namespace demoqa
                 PropertiesS.Sleep(500);
                 CurrentAddress("Delhi");
                 PropertiesS.Sleep(500);
-                SubmitButton();
+                SubmitButton(js);
                 js.ExecuteScript("window.scrollBy(0,200)");
             }
         }
@@ -77,9 +78,10 @@ namespace demoqa
             {
                 SeleniumSetMethod.Click("Xpath", "//*[@aria-label='Collapse all']");                
             }
-            public static void checkBoxRunner()
+            public static void checkBoxRunner(IJavaScriptExecutor js)
             {
-                SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][1]//child::li[2]");
+            js.ExecuteScript("window.scrollBy(0,300)");
+            SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][1]//child::li[2]");
                 PropertiesS.Sleep(2000);
                 ToggleHome();
                 PropertiesS.Sleep(2000);
@@ -268,14 +270,16 @@ namespace demoqa
             }
             public static void buttonRunner(IJavaScriptExecutor js)
             {
-                SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][1]//child::li[5]");
+            js.ExecuteScript("window.scrollBy(0,150)");
+            SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][1]//child::li[5]");
                 PropertiesS.Sleep(3000);
                 doubleClick(js);
                 PropertiesS.Sleep(2000);
                 rightClick(js);
                 PropertiesS.Sleep(2000);
                 dynamicClick(js);
-            }
+            js.ExecuteScript("window.scrollBy(0,200)");
+        }
         }
         #region Links
         class links
@@ -346,7 +350,7 @@ namespace demoqa
             }
             public static void brokenLinksRunner(IJavaScriptExecutor js)
             {
-                js.ExecuteScript("window.scrollBy(0,200)");
+                js.ExecuteScript("window.scrollBy(0,300)");
                 SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][1]//child::li[7]");
                 ValidLink();
                 PropertiesS.Sleep(2000);
@@ -380,7 +384,7 @@ namespace demoqa
             }
             public static void upLoad_dnloadRunner(IJavaScriptExecutor js)
             {
-                js.ExecuteScript("window.scrollBy(0,200)");
+                js.ExecuteScript("window.scrollBy(0,400)");
                 SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][1]//child::li[8]");
                 PropertiesS.Sleep(2000);
                 download(js);
@@ -409,11 +413,12 @@ namespace demoqa
                 PropertiesS.Sleep(2000);
                 EnableBtn();
                 PropertiesS.Sleep(5000);
-                ChangeColorBtn();
-                PropertiesS.Sleep(5000);
+            js.ExecuteScript("window.scrollBy(0,200)");
+            ChangeColorBtn();
+                PropertiesS.Sleep(7000);
                 VisibleAfterBtn();
-
-            }
+                PropertiesS.Sleep(7000);
+        }
         }
     class Elements
     {
@@ -421,20 +426,25 @@ namespace demoqa
         {
             textBox.textboxRunner(js);
             PropertiesS.Sleep(10000);
-            checkBox.checkBoxRunner();
+            checkBox.checkBoxRunner(js);
             PropertiesS.Sleep(10000);
             radioButton.radioButtonRunner();
             PropertiesS.Sleep(10000);
+            js.ExecuteScript("window.scrollBy(0,200)");
             webTables.webtableRunner(js);
             PropertiesS.Sleep(10000);
+            js.ExecuteScript("window.scrollBy(0,200)");
             button.buttonRunner(js);
             PropertiesS.Sleep(10000);
             //links.linksRunner(js);
-            //PropertiesS.Sleep(10000);
-            brokenLinks.BrokenLink();
             PropertiesS.Sleep(10000);
+            //js.ExecuteScript("window.scrollBy(0,500)");
+            //brokenLinks.BrokenLink();
+            PropertiesS.Sleep(10000);
+            js.ExecuteScript("window.scrollBy(0,200)");
             upLoad_dnload.upLoad_dnloadRunner(js);
             PropertiesS.Sleep(10000);
+            js.ExecuteScript("window.scrollBy(0,200)");
             dynamicProp.dynamicPropRunner(js);
             
         }
