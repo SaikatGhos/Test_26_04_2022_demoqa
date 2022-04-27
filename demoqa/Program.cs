@@ -22,12 +22,12 @@ namespace demoqa
             IAlert alert;
             Thread.Sleep(2000);
 
-            //Elements.elementsRunner(js);
-            //ALert_Frame_Window.alert_frame_windowRunner(js);
-            //widgets.widgetRunner(js);
-            //Interaction.interactionRun(js);
+            Elements.elementsRunner(js);
+            ALert_Frame_Window.alert_frame_windowRunner(js);
+            widgets.widgetRunner(js);
+            Interaction.interactionRun(js);
 
-            bookStore.bookstoreRunner(js);
+            //bookStore.bookstoreRunner(js);
             Thread.Sleep(5000);
             PropertiesS.driver.Close();
             PropertiesS.driver.Quit();
