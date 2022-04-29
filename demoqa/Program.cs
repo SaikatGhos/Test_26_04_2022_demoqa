@@ -9,28 +9,36 @@ using System.Threading.Tasks;
 
 namespace demoqa
 {
-    internal class Program
+    internal class Program : PropertiesS
     {
         static void Main(string[] args)
         {
 
-            PropertiesS.driver = new ChromeDriver();
-            IJavaScriptExecutor js = (IJavaScriptExecutor)PropertiesS.driver;
-            PropertiesS.driver.Navigate().GoToUrl("https://demoqa.com/login");
-            PropertiesS.driver.Manage().Window.Maximize();
+            driver = new ChromeDriver();
 
-            IAlert alert;
-            Thread.Sleep(2000);
+            GoToURL("https://demoqa.com/");
+            MaxWindow();
 
-            Elements.elementsRunner(js);
-            ALert_Frame_Window.alert_frame_windowRunner(js);
-            widgets.widgetRunner(js);
-            Interaction.interactionRun(js);
+            //IAlert alert;
+            //Thread.Sleep(2000);
+
+           VScroll(200);
+            Sleep(1000);
+            SeleniumSetMethod.Click(PropertyType.Xpath, "//*[@id='app']/div/div/div[2]/div/div[1]/div/div[3]");
+            Sleep(3000);
+
+            Elements.elementsRunner();
+            //PropertiesS.VScroll(700);
+            //ALert_Frame_Window.alert_frame_windowRunner();
+           VScroll(700);
+            //widgets.widgetRunner();
+            //Interaction.interactionRun(js);
+            //practicalForm.practicalformRunner(js);
 
             //bookStore.bookstoreRunner(js);
             Thread.Sleep(5000);
-            PropertiesS.driver.Close();
-            PropertiesS.driver.Quit();
+            driver.Close();
+            driver.Quit();
             
 
         }
