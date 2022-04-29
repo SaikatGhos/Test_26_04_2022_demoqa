@@ -38,15 +38,42 @@ namespace demoqa
         }
         public static void VScroll(int yPixel)
         {
-            PropertiesS.js.ExecuteScript("window.scrollBy(0," + yPixel + ")");
+            try {
+                IJavaScriptExecutor js = (IJavaScriptExecutor)PropertiesS.driver;
+                var VS = String.Format("window.scrollTo(0, {0})", yPixel);
+                js.ExecuteScript(VS);                
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            
         }
         public static void HScroll(int xPixel)
         {
-            PropertiesS.js.ExecuteScript("window.scrollBy(" + xPixel + ",0)");
+            try
+            {
+                IJavaScriptExecutor js = (IJavaScriptExecutor)PropertiesS.driver;
+                var VS = String.Format("window.scrollTo({0}, 0)", xPixel);
+                js.ExecuteScript(VS);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
         public static void CombineScroll(int xPixel, int yPixel)
         {
-            PropertiesS.js.ExecuteScript("window.scrollBy(" + xPixel + ","+ yPixel + ")");
+            try
+            {
+                IJavaScriptExecutor js = (IJavaScriptExecutor)PropertiesS.driver;
+                var VS = String.Format("window.scrollTo({0}, {1})", xPixel,yPixel);
+                js.ExecuteScript(VS);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
 
     }
