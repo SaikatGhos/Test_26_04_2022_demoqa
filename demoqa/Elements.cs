@@ -36,12 +36,12 @@ namespace demoqa
 
             }
 
-            public static void SubmitButton(IJavaScriptExecutor js)
+            public static void SubmitButton()
             {
-                js.ExecuteScript("window.scrollBy(0,300)");
+            PropertiesS.VScroll(300);            
                 SeleniumSetMethod.Click("Xpath", "//button[@class='btn btn-primary']");
             }
-            public static void textboxRunner(IJavaScriptExecutor js)
+            public static void textboxRunner()
             {
                 SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][1]//child::li[1]");
                 PropertiesS.Sleep(2000);
@@ -53,8 +53,8 @@ namespace demoqa
                 PropertiesS.Sleep(500);
                 CurrentAddress("Delhi");
                 PropertiesS.Sleep(500);
-                SubmitButton(js);
-                js.ExecuteScript("window.scrollBy(0,200)");
+                SubmitButton();
+                PropertiesS.VScroll(200);
             }
         }
         class checkBox
@@ -78,9 +78,10 @@ namespace demoqa
             {
                 SeleniumSetMethod.Click("Xpath", "//*[@aria-label='Collapse all']");                
             }
-            public static void checkBoxRunner(IJavaScriptExecutor js)
+            public static void checkBoxRunner()
             {
-            js.ExecuteScript("window.scrollBy(0,300)");
+            
+            PropertiesS.VScroll(300);
             SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][1]//child::li[2]");
                 PropertiesS.Sleep(2000);
                 ToggleHome();
@@ -154,7 +155,7 @@ namespace demoqa
             {
                 SeleniumSetMethod.Click("id", "submit");                
             }
-            public static void add10Records(IJavaScriptExecutor js)
+            public static void add10Records()
             {
                 string[] firstName = { "Charles","Robert","Anderson","David","Frank","Martin","Dean","Green","Chris","Palmer"};
                 string[] lastName = { "SurCharles", "SurRobert", "SurAnderson", "SurDavid", "SurFrank", "SurMartin", "SurDean", "SurGreen", "SurChris", "SurPalmer" };
@@ -181,7 +182,7 @@ namespace demoqa
                     PropertiesS.Sleep(1000);
                     SubmitBtn();
                 }
-                js.ExecuteScript("window.scrollBy(0,700)");
+            PropertiesS.VScroll(700);            
                 PropertiesS.Sleep(2000);
                 SeleniumSetMethod.Click("Xpath", "//button[text()='Next']");
                 PropertiesS.Sleep(2000);
@@ -226,11 +227,11 @@ namespace demoqa
                 PropertiesS.Sleep(2000);
                 SubmitBtnEdit();
             }
-            public static void webtableRunner(IJavaScriptExecutor js)
+            public static void webtableRunner()
             {
                 SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][1]//child::li[4]");
                 PropertiesS.Sleep(2000);
-                add10Records(js);
+                add10Records();
                 PropertiesS.Sleep(2000);
                 SearchBox("Vega");
                 PropertiesS.Sleep(2000);
@@ -241,44 +242,51 @@ namespace demoqa
         }
         class button
         {
-            public static void doubleClick(IJavaScriptExecutor js)
+            public static void doubleClick()
             {
-                js.ExecuteScript("window.scrollBy(0,50)");
+            PropertiesS.VScroll(50);
+            
                 Actions action = new Actions(PropertiesS.driver);
                 action.MoveToElement(PropertiesS.driver.FindElement(By.XPath("//button[@id='doubleClickBtn']")))
                     .DoubleClick().Build().Perform();
-                js.ExecuteScript("window.scrollBy(0,150)");
-                PropertiesS.Sleep(2000);
+                
+            PropertiesS.VScroll(150);
+            PropertiesS.Sleep(2000);
             }
-            public static void rightClick(IJavaScriptExecutor js)
+            public static void rightClick()
             {
-                js.ExecuteScript("window.scrollBy(0,50)");
+            PropertiesS.VScroll(50);
+            
                 Actions action = new Actions(PropertiesS.driver);
                 action.MoveToElement(PropertiesS.driver.FindElement(By.XPath("//button[@id='rightClickBtn']")))
                     .ContextClick().Build().Perform();
-                js.ExecuteScript("window.scrollBy(0,150)");
-                PropertiesS.Sleep(5000);
+            PropertiesS.VScroll(150);
+            PropertiesS.Sleep(5000);
             }
-            public static void dynamicClick(IJavaScriptExecutor js)
+            public static void dynamicClick()
             {
-                js.ExecuteScript("window.scrollBy(0,200)");
+            PropertiesS.VScroll(200);
+            
                 Actions action = new Actions(PropertiesS.driver);
                 action.MoveToElement(PropertiesS.driver.FindElement(By.XPath("//button[text()='Click Me']")))
                     .Click().Build().Perform();
-                js.ExecuteScript("window.scrollBy(0,150)");
+            PropertiesS.VScroll(150);
+            
                 PropertiesS.Sleep(3000);
             }
-            public static void buttonRunner(IJavaScriptExecutor js)
+            public static void buttonRunner()
             {
-            js.ExecuteScript("window.scrollBy(0,150)");
+            PropertiesS.VScroll(150);
+            
             SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][1]//child::li[5]");
                 PropertiesS.Sleep(3000);
-                doubleClick(js);
+                doubleClick();
                 PropertiesS.Sleep(2000);
-                rightClick(js);
+                rightClick();
                 PropertiesS.Sleep(2000);
-                dynamicClick(js);
-            js.ExecuteScript("window.scrollBy(0,200)");
+                dynamicClick();
+            PropertiesS.VScroll(200);
+            
         }
         }
         #region Links
@@ -286,7 +294,8 @@ namespace demoqa
         {
             public static void openNew(IJavaScriptExecutor js)
             {
-                js.ExecuteScript("window.scrollBy(0,500)");
+            PropertiesS.VScroll(500);
+            
                 SeleniumSetMethod.Click("id", "item-5");
                 PropertiesS.Sleep(3000);
                 SeleniumSetMethod.Click("id", "simpleLink");
@@ -297,33 +306,35 @@ namespace demoqa
             }
             public static void callApi(IJavaScriptExecutor js)
             {
-                js.ExecuteScript("window.scrollBy(0,500)");
+            PropertiesS.VScroll(500);
+            
                 
                 SeleniumSetMethod.Click("Xpath", "//a[@id='created']");
                
                 PropertiesS.Sleep(2000);
-                js.ExecuteScript("window.scrollBy(0,200)");
+            PropertiesS.VScroll(200);
+            
                 SeleniumSetMethod.Click("Xpath", "//a[@id='no-content']");
                 
                 PropertiesS.Sleep(2000);
-                js.ExecuteScript("window.scrollBy(0,200)");
-                SeleniumSetMethod.Click("Xpath", "//a[@id='moved']");
+            PropertiesS.VScroll(200);
+            SeleniumSetMethod.Click("Xpath", "//a[@id='moved']");
                 
                 PropertiesS.Sleep(2000);
-                js.ExecuteScript("window.scrollBy(0,200)");
-                SeleniumSetMethod.Click("Xpath", "//a[@id='bad-request']");
+            PropertiesS.VScroll(200);
+            SeleniumSetMethod.Click("Xpath", "//a[@id='bad-request']");
                 
                 PropertiesS.Sleep(2000);
-                js.ExecuteScript("window.scrollBy(0,200)");
-                SeleniumSetMethod.Click("Xpath", "//a[@id='unauthorized']");
+            PropertiesS.VScroll(200);
+            SeleniumSetMethod.Click("Xpath", "//a[@id='unauthorized']");
                 
                 PropertiesS.Sleep(2000);
-                js.ExecuteScript("window.scrollBy(0,200)");
-                SeleniumSetMethod.Click("Xpath", "//a[@id='forbidden']");
+            PropertiesS.VScroll(200);
+            SeleniumSetMethod.Click("Xpath", "//a[@id='forbidden']");
                 
                 PropertiesS.Sleep(2000);
-                js.ExecuteScript("window.scrollBy(0,200)");
-                SeleniumSetMethod.Click("Xpath", "//a[@id='invalid-url']");
+            PropertiesS.VScroll(200);
+            SeleniumSetMethod.Click("Xpath", "//a[@id='invalid-url']");
               
                 PropertiesS.Sleep(2000);
             }
@@ -350,8 +361,8 @@ namespace demoqa
             }
             public static void brokenLinksRunner(IJavaScriptExecutor js)
             {
-                js.ExecuteScript("window.scrollBy(0,300)");
-                SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][1]//child::li[7]");
+            PropertiesS.VScroll(300);
+            SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][1]//child::li[7]");
                 ValidLink();
                 PropertiesS.Sleep(2000);
                 BrokenLink();
@@ -359,11 +370,12 @@ namespace demoqa
         }
         class upLoad_dnload
         {
-            public static void download(IJavaScriptExecutor js)
+            public static void download()
             {
                 try
                 {
-                    js.ExecuteScript("window.scrollBy(0,500)");                                        
+                PropertiesS.VScroll(500);
+                
                     SeleniumSetMethod.Click("Xpath", "//a[@id='downloadButton']");
                     PropertiesS.Sleep(2000);
                     ChromeOptions opt = new ChromeOptions();
@@ -375,21 +387,23 @@ namespace demoqa
                     Console.WriteLine("The Error is" + e.ToString());
                 }
             }
-            public static void upload(IJavaScriptExecutor js)
+            public static void upload()
             {
-                js.ExecuteScript("window.scrollBy(0,500)");
+            PropertiesS.VScroll(500);
+            
                 SeleniumSetMethod.SendKeys("Xpath", "//input[@type='file']", "E:\\5thSem_admitcard.pdf");
                 PropertiesS.Sleep(3000);
                 
             }
-            public static void upLoad_dnloadRunner(IJavaScriptExecutor js)
+            public static void upLoad_dnloadRunner()
             {
-                js.ExecuteScript("window.scrollBy(0,400)");
+            PropertiesS.VScroll(400);
+            
                 SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][1]//child::li[8]");
                 PropertiesS.Sleep(2000);
-                download(js);
+                download();
                 PropertiesS.Sleep(7000);
-                upload(js);
+                upload();
             }
         }
         class dynamicProp
@@ -406,14 +420,14 @@ namespace demoqa
             {
                 SeleniumSetMethod.Click("id", "visibleAfter");                
             }
-            public static void dynamicPropRunner(IJavaScriptExecutor js)
+            public static void dynamicPropRunner()
             {
-                js.ExecuteScript("window.scrollBy(0,300)");
-                SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][1]//child::li[9]");
+            PropertiesS.VScroll(300);
+            SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][1]//child::li[9]");
                 PropertiesS.Sleep(2000);
                 EnableBtn();
                 PropertiesS.Sleep(5000);
-            js.ExecuteScript("window.scrollBy(0,200)");
+            PropertiesS.VScroll(200);
             ChangeColorBtn();
                 PropertiesS.Sleep(7000);
                 VisibleAfterBtn();
@@ -422,30 +436,34 @@ namespace demoqa
         }
     class Elements
     {
-        public static void elementsRunner(IJavaScriptExecutor js)
+        public static void elementsRunner()
         {
-            textBox.textboxRunner(js);
+            textBox.textboxRunner();
             PropertiesS.Sleep(10000);
-            checkBox.checkBoxRunner(js);
+            checkBox.checkBoxRunner();
             PropertiesS.Sleep(10000);
             radioButton.radioButtonRunner();
             PropertiesS.Sleep(10000);
-            js.ExecuteScript("window.scrollBy(0,200)");
-            webTables.webtableRunner(js);
+            PropertiesS.VScroll(200);
+            
+            webTables.webtableRunner();
             PropertiesS.Sleep(10000);
-            js.ExecuteScript("window.scrollBy(0,200)");
-            button.buttonRunner(js);
+            PropertiesS.VScroll(200);
+            
+            button.buttonRunner();
             PropertiesS.Sleep(10000);
             //links.linksRunner(js);
             PropertiesS.Sleep(10000);
             //js.ExecuteScript("window.scrollBy(0,500)");
             //brokenLinks.BrokenLink();
             PropertiesS.Sleep(10000);
-            js.ExecuteScript("window.scrollBy(0,200)");
-            upLoad_dnload.upLoad_dnloadRunner(js);
+            PropertiesS.VScroll(200);
+            
+            upLoad_dnload.upLoad_dnloadRunner();
             PropertiesS.Sleep(10000);
-            js.ExecuteScript("window.scrollBy(0,200)");
-            dynamicProp.dynamicPropRunner(js);
+            PropertiesS.VScroll(200);
+            
+            dynamicProp.dynamicPropRunner();
             
         }
     }

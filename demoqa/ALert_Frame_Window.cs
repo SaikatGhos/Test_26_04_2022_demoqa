@@ -24,9 +24,9 @@ namespace demoqa
         {
             SeleniumSetMethod.Click("Id", "messageWindowButton");            
         }
-        public static void windowRunner(IJavaScriptExecutor js)
+        public static void windowRunner()
         {
-            js.ExecuteScript("window.scrollBy(0,200)");
+            PropertiesS.js.ExecuteScript("window.scrollBy(0,200)");
             SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][3]//child::li[1]");
             PropertiesS.Sleep(2000);
             NewTab();
@@ -59,9 +59,9 @@ namespace demoqa
             SeleniumSetMethod.Click("id", "closeLargeModal");
             
         }
-        public static void modalRunner(IJavaScriptExecutor js)
+        public static void modalRunner()
         {
-            js.ExecuteScript("window.scrollBy(0,200)");
+            PropertiesS.js.ExecuteScript("window.scrollBy(0,200)");
             SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][3]//child::li[5]");
             PropertiesS.Sleep(2000);
             SmallModal();
@@ -78,9 +78,9 @@ namespace demoqa
     {
         
 
-        public static void AlertFrames(IJavaScriptExecutor js)
+        public static void AlertFrames()
         {
-            js.ExecuteScript("window.scrollBy(0,400)");
+            PropertiesS.js.ExecuteScript("window.scrollBy(0,400)");
             SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][3]//child::li[3]");
             
         }
@@ -94,12 +94,12 @@ namespace demoqa
             SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][3]//child::li[5]");
             
         }
-        public static void frameRunner(IJavaScriptExecutor js)
+        public static void frameRunner()
         {
-            js.ExecuteScript("window.scrollBy(0,400)");
+            PropertiesS.js.ExecuteScript("window.scrollBy(0,400)");
             SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][3]//child::li[3]");
             PropertiesS.Sleep(2000);
-            AlertFrames(js);
+            AlertFrames();
         }
     }
     class alert
@@ -137,9 +137,9 @@ namespace demoqa
             PropertiesS.Sleep(5000);
             PropertiesS.driver.SwitchTo().DefaultContent();
         }
-        public static void alert4(IJavaScriptExecutor js)
+        public static void alert4()
         {
-            js.ExecuteScript("window.scrollBy(0,200)");
+            PropertiesS.js.ExecuteScript("window.scrollBy(0,200)");
             SeleniumSetMethod.Click("Xpath", "//button[@id='promtButton']");
             PropertiesS.alert = PropertiesS.driver.SwitchTo().Alert();
             PropertiesS.Sleep(2000);
@@ -157,7 +157,7 @@ namespace demoqa
             PropertiesS.driver.SwitchTo().DefaultContent();
         }
         #endregion Alert
-        public static void alertRunner(IJavaScriptExecutor js)
+        public static void alertRunner()
         {
             SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][3]//child::li[2]");
             PropertiesS.Sleep(2000);
@@ -167,22 +167,25 @@ namespace demoqa
             PropertiesS.Sleep(2000);
             alert3();
             PropertiesS.Sleep(2000);
-            alert4(js);
+            alert4();
         }
 
     }
     class ALert_Frame_Window
     {
 
-        public static void alert_frame_windowRunner(IJavaScriptExecutor js)
+        public static void alert_frame_windowRunner()
         {
-            BrowserWindow.windowRunner(js);
+            SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][3]");            
+            PropertiesS.VScroll(200);
+            BrowserWindow.windowRunner();
             PropertiesS.Sleep(5000);
-            alert.alertRunner(js);
+            PropertiesS.VScroll(200);
+            alert.alertRunner();
             PropertiesS.Sleep(5000);
-            frame.frameRunner(js);
+            frame.frameRunner();
             PropertiesS.Sleep(5000);
-            modal.modalRunner(js);
+            modal.modalRunner();
         }
     }
 }

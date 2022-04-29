@@ -55,15 +55,7 @@ namespace demoqa
         {
             SeleniumSetMethod.Click("Xpath", "//*[@class='react-datepicker__week'][4]//child::div[4]");            
         }
-
-        /* public void Subject(string subject)
-         {
-             wait.Until(ExpectedConditions.ElementIsVisible(By.Id("subjectsContainer"))).SendKeys(subject);
-         }
-         public void SubjectEnter()
-         {
-             wait.Until(ExpectedConditions.ElementIsVisible(By.Id("subjectsContainer"))).SendKeys(Keys.Enter);
-         }*/
+       
         public static void Hobbies()
         {
             SeleniumSetMethod.Click("Xpath", "//*[@class = 'custom-control custom-checkbox custom-control-inline']//descendant::label[1]");            
@@ -72,7 +64,7 @@ namespace demoqa
         {
             SeleniumSetMethod.Click("Xpath", "//*[@id= 'submit']");            
         }
-        public static void fromBuilder(IJavaScriptExecutor js)
+        public static void fromBuilder()
         {
             FirstName("Charlie");
             PropertiesS.Sleep(1000);
@@ -84,7 +76,7 @@ namespace demoqa
             PropertiesS.Sleep(1000);
             MobileNumber("9574124578");
             PropertiesS.Sleep(1000);
-            js.ExecuteScript("window.scrollBy(0,300)");
+            PropertiesS.VScroll(300);
             DateOfBirth();
             PropertiesS.Sleep(1000);
             YearOfBirth();
@@ -98,25 +90,25 @@ namespace demoqa
             PickDay();
             PropertiesS.Sleep(1000);
             Hobbies();
-            PropertiesS.Sleep(1000);
-            js.ExecuteScript("window.scrollBy(0,300)");
+            PropertiesS.Sleep(1000);            
+            PropertiesS.VScroll(300);
             SubmitBtn();
         }
-        public static void formRunner(IJavaScriptExecutor js)
+        public static void formRunner()
         {
             SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][2]//child::li[1]");
             PropertiesS.Sleep(2000);
-            fromBuilder(js);
+            fromBuilder();
         }
     }
     class practicalForm
     {
-        public static void practicalformRunner(IJavaScriptExecutor js)
+        public static void practicalformRunner()
         {
-            js.ExecuteScript("window.scrollBy(0,500)");
+            PropertiesS.VScroll(500);
             SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][2]");
             PropertiesS.Sleep(2000);            
-            form.formRunner(js);
+            form.formRunner();
         }
     }
 }

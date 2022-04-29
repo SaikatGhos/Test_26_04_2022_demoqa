@@ -14,9 +14,9 @@ namespace demoqa
         {
             SeleniumSetMethod.Click("id", "section1Heading");
         }
-        public static void Section2(IJavaScriptExecutor js)
+        public static void Section2()
         {
-            js.ExecuteScript("window.scrollBy(0,200)");
+            PropertiesS.VScroll(200);
             SeleniumSetMethod.Click("id", "section2Heading"); 
         }
         public static void Section3()
@@ -26,12 +26,12 @@ namespace demoqa
         }
         public static void accordianRunner()
         {
-            IJavaScriptExecutor js = (IJavaScriptExecutor)(PropertiesS.driver);
+            
             SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][4]//child::li[1]");
             PropertiesS.Sleep(2000);
             Section1();
             PropertiesS.Sleep(2000);
-            Section2(js);
+            Section2();
             PropertiesS.Sleep(2000);
             Section3();
         }
@@ -94,9 +94,9 @@ namespace demoqa
             PropertiesS.driver.FindElement
                   (By.XPath("//*[@class = 'react-datepicker__time-box']//child::li[10]")).Click();
         }
-        public static void dateTimeRunner(IJavaScriptExecutor js)
+        public static void dateTimeRunner()
         {
-            js.ExecuteScript("window.scrollBy(0,300)");
+            PropertiesS.VScroll(300);
             SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][4]//child::li[3]");
             PropertiesS.Sleep(2000);
             SelectDate();
@@ -134,9 +134,9 @@ namespace demoqa
                 
             }
         }
-        public static void sliderRunner(IJavaScriptExecutor js)
+        public static void sliderRunner()
         {
-            js.ExecuteScript("window.scrollBy(0,300)");
+            PropertiesS.VScroll(300);
             SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][4]//child::li[4]");
             PropertiesS.Sleep(2000);
             ClickSlider();
@@ -156,9 +156,9 @@ namespace demoqa
             SeleniumSetMethod.Click("Xpath", "//*[@id= 'startStopButton']");
             
         }
-        public static void progessRunner(IJavaScriptExecutor js)
+        public static void progessRunner()
         {
-            js.ExecuteScript("window.scrollBy(0,300)");
+            PropertiesS.VScroll(300);
             SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][4]//child::li[5]");
             PropertiesS.Sleep(2000);
             StartProgressBar();
@@ -185,7 +185,7 @@ namespace demoqa
         }
         public static void tabRunner(IJavaScriptExecutor js)
         {
-            js.ExecuteScript("window.scrollBy(0,300)");
+            PropertiesS.VScroll(300);
             SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][4]//child::li[6]");
             PropertiesS.Sleep(2000);
             OriginTab();
@@ -226,23 +226,23 @@ namespace demoqa
                 (javaScript, PropertiesS.driver.FindElement
                 (By.XPath("//*[@id= 'texToolTopContainer']//child::a[2]")));
         }
-        public static void tooltipRunner(IJavaScriptExecutor js)
+        public static void tooltipRunner()
         {
             String javaScript = "var evObj = document.createEvent('MouseEvents');" +
                  "evObj.initMouseEvent(\"mouseover\",true, false, window, 0, 0, 0, 0, 0, " +
                  "false, false, false, false, 0, null);" +
                  "arguments[0].dispatchEvent(evObj);";
 
-            js.ExecuteScript("window.scrollBy(0,500)");
+            PropertiesS.VScroll(500);
             SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][4]//child::li[7]");            
             PropertiesS.Sleep(2000);
             HoverButton(javaScript);
             PropertiesS.Sleep(2000);
             HoverTextField(javaScript);
-            js.ExecuteScript("window.scrollBy(0,100)");
+            PropertiesS.VScroll(100);
             PropertiesS.Sleep(2000);
             HoverText(javaScript);
-            js.ExecuteScript("window.scrollBy(0,100)");
+            PropertiesS.VScroll(100);
             PropertiesS.Sleep(2000);
             HoverText2(javaScript);
 
@@ -275,9 +275,9 @@ namespace demoqa
             SeleniumSetMethod.Click("LinkText", "Main Item 3");
 
         }
-        public static void menuRunner(IJavaScriptExecutor js)
+        public static void menuRunner()
         {
-            js.ExecuteScript("window.scrollBy(0,800)");
+            PropertiesS.VScroll(800);
             SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][4]//child::li[8]");
             PropertiesS.Sleep(2000);
             MainItem1();
@@ -293,16 +293,16 @@ namespace demoqa
     }
      class widgets
     {
-        public static void widgetRunner(IJavaScriptExecutor js)
-        {
-            js.ExecuteScript("window.scrollBy(0,200)");
+        public static void widgetRunner()
+        {            
+            PropertiesS.VScroll(200);
             //accordian.accordianRunner();
-            //datePicker.dateTimeRunner(js);
-            //slider.sliderRunner(js);
-            //progressBar.progessRunner(js);
+            datePicker.dateTimeRunner();
+            slider.sliderRunner();
+            progressBar.progessRunner();
             //tabs.tabRunner(js);
-            //tooltip.tooltipRunner(js);
-            menu.menuRunner(js);
+            tooltip.tooltipRunner();
+            menu.menuRunner();
 
         }
     }
