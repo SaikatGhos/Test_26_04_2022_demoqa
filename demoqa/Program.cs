@@ -18,10 +18,7 @@ namespace demoqa
 
             GoToURL("https://demoqa.com/");
             MaxWindow();
-
-            //IAlert alert;
-            //Thread.Sleep(2000);
-
+            
            VScroll(200);
             Sleep(1000);
             SeleniumSetMethod.Click(PropertyType.Xpath, "//*[@id='app']/div/div/div[2]/div/div[1]/div/div[3]");
@@ -38,9 +35,7 @@ namespace demoqa
             //bookStore.bookstoreRunner(js);
             Thread.Sleep(5000);
             driver.Close();
-            driver.Quit();
-            
-
+            driver.Quit();            
         }
     }
 }
