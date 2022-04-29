@@ -9,6 +9,14 @@ using System.Threading.Tasks;
 
 namespace demoqa
 {
+    enum PropertyType
+    {
+        Id,
+        Name,
+        Class,
+        LinkText,
+        Xpath
+    }
     class PropertiesS
     {
         public static IWebDriver driver { get; set; }
