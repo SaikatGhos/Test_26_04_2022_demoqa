@@ -11,17 +11,17 @@ namespace demoqa
     #region Sortable
     class sortable:SeleniumSetMethod
     {
-        public static void sortablerunner(IJavaScriptExecutor js)
+        public static void sortablerunner( )
         {
-            DragSixOnOne(js);
+            DragSixOnOne();
             Sleep(2000);
-            DragTwoOnFour(js);
+            DragTwoOnFour();
             Sleep(2000);
             Grid();
             Sleep(2000);
-            DragThreeToSeven(js);
+            DragThreeToSeven();
         }
-        public static void DragSixOnOne(IJavaScriptExecutor js)
+        public static void DragSixOnOne( )
         {
             VScroll(300);
             Actions action = new Actions(driver);
@@ -31,7 +31,7 @@ namespace demoqa
                 (driver.FindElement(By.XPath("//*[@class = 'vertical-list-container mt-4']//child::div[1]"))).
                 Release().Build().Perform();
         }
-        public static void DragTwoOnFour(IJavaScriptExecutor js)
+        public static void DragTwoOnFour( )
         {
             VScroll(300);            
             Actions action = new Actions(driver);
@@ -46,7 +46,7 @@ namespace demoqa
             driver.FindElement(By.XPath("//*[@id = 'demo-tab-grid']")).Click();
         }
 
-        public static void DragThreeToSeven(IJavaScriptExecutor js)
+        public static void DragThreeToSeven( )
         {
             VScroll(300);
             Actions action = new Actions(driver);
@@ -82,7 +82,7 @@ namespace demoqa
         {
             driver.FindElement(By.XPath("//*[@id= 'demo-tabpane-grid']//child::div[3]//child::li[3]")).Click();
         }
-        public static void selectablerunner(IJavaScriptExecutor js)
+        public static void selectablerunner( )
         {
             VScroll(300);
             driver.FindElement(By.XPath("//*[@class = 'element-group'][5]//child::li[2]")).Click();
@@ -104,28 +104,28 @@ namespace demoqa
     #region Resizable
     class resizable : SeleniumSetMethod
     {
-        public static void ResizableBoxinFrame(IJavaScriptExecutor js)
+        public static void ResizableBoxinFrame( )
         {
             VScroll(300);
             Actions action = new Actions(driver);
             action.ClickAndHold(driver.FindElement(By.XPath("//*[@class = 'constraint-area']//child::span"))).
                 MoveByOffset(100, 20).Release().Build().Perform();
         }
-        public static void ResizableBoxOutFrame(IJavaScriptExecutor js)
+        public static void ResizableBoxOutFrame( )
         {
             VScroll(300);
             Actions action = new Actions(driver);
             action.ClickAndHold(driver.FindElement(By.XPath("//*[@class = 'resizable-nolimit mt-4']//child::span"))).
                 MoveByOffset(300, 200).Release().Build().Perform();
         }
-        public static void resizablerunner(IJavaScriptExecutor js)
+        public static void resizablerunner( )
         {
             VScroll(300);
             Click(PropertyType.Xpath, "//*[@class = 'element-group'][5]//child::li[3]");
             Sleep(3000);
-            ResizableBoxinFrame(js);
+            ResizableBoxinFrame();
             Sleep(2000);
-            ResizableBoxOutFrame(js);
+            ResizableBoxOutFrame();
         }
     }
     #endregion
@@ -133,7 +133,7 @@ namespace demoqa
     #region Dropable
     class dropable : SeleniumSetMethod
     {
-        public static void SimpleDropBox(IJavaScriptExecutor js)
+        public static void SimpleDropBox( )
         {
             Actions action = new Actions(driver);
             CombineScroll(200, 200);            
@@ -141,14 +141,14 @@ namespace demoqa
             action.DragAndDrop(driver.FindElement(By.XPath("//*[@class= 'simple-drop-container']//child::div[@id][1]")),
                 driver.FindElement(By.XPath("//*[@class= 'simple-drop-container']//child::div[@id='droppable']"))).Release().Build().Perform();
         }
-        public static void AcceptTab(IJavaScriptExecutor js)
+        public static void AcceptTab( )
         {
             CombineScroll(200, 200);            
             Sleep(500);
             driver.FindElement(By.XPath("//*[@id = 'droppableExample-tab-accept']")).Click();
             string aa = null;
         }
-        public static void AcceptableDropBox(IJavaScriptExecutor js)
+        public static void AcceptableDropBox( )
         {
             Actions action = new Actions(driver);
             CombineScroll(200, 200);
@@ -156,13 +156,13 @@ namespace demoqa
             action.DragAndDrop(driver.FindElement(By.XPath("//*[@class= 'accept-drop-container']//child::div[@id][1]")),
                driver.FindElement(By.XPath("//*[@class= 'accept-drop-container']//child::div[@id = 'droppable']"))).Release().Build().Perform();
         }
-        public static void PreventTab(IJavaScriptExecutor js)
+        public static void PreventTab( )
         {
             CombineScroll(200, 200);
             Sleep(500);
             driver.FindElement(By.XPath("//*[@id = 'droppableExample-tab-preventPropogation']")).Click();
         }
-        public static void PreventDropBoxOuter(IJavaScriptExecutor js)
+        public static void PreventDropBoxOuter( )
         {
             Actions action = new Actions(driver);
             CombineScroll(200, 200);
@@ -170,7 +170,7 @@ namespace demoqa
             action.DragAndDrop(driver.FindElement(By.XPath("//*[@class= 'pp-drop-container']//child::div[@id='dragBox']")),
                 driver.FindElement(By.XPath("//*[@class= 'pp-drop-container']//child::div[@id='notGreedyDropBox']"))).Release().Build().Perform();
         }
-        public static void PreventDropBoxOuterDrop(IJavaScriptExecutor js)
+        public static void PreventDropBoxOuterDrop( )
         {
             Actions action = new Actions(driver);
             CombineScroll(200, 200);
@@ -178,13 +178,13 @@ namespace demoqa
             action.DragAndDrop(driver.FindElement(By.XPath("//*[@class= 'pp-drop-container']//child::div[@id='dragBox']")),
                driver.FindElement(By.XPath("//*[@class= 'pp-drop-container']//child::div[@id='greedyDropBox']"))).Release().Build().Perform();
         }
-        public static void RevertTab(IJavaScriptExecutor js)
+        public static void RevertTab( )
         {
             CombineScroll(200, 200);
             Sleep(500);
             driver.FindElement(By.XPath("//*[@id = 'droppableExample-tab-revertable']")).Click();
         }
-        public static void WillRevert(IJavaScriptExecutor js)
+        public static void WillRevert( )
         {
             Actions action = new Actions(driver);
             CombineScroll(200, 200);
@@ -192,7 +192,7 @@ namespace demoqa
             action.DragAndDrop(driver.FindElement(By.XPath("//*[@class= 'revertable-drop-container']//child::div[@id='revertable']")),
                 driver.FindElement(By.XPath("//*[@class= 'revertable-drop-container']//child::div[@id='droppable']"))).Release().Build().Perform();
         }
-        public static void NotRevert(IJavaScriptExecutor js)
+        public static void NotRevert( )
         {
             Actions action = new Actions(driver);
             CombineScroll(200, 200);
@@ -200,28 +200,28 @@ namespace demoqa
             action.DragAndDrop(driver.FindElement(By.XPath("//*[@class= 'revertable-drop-container']//child::div[@id='notRevertable']")),
                 driver.FindElement(By.XPath("//*[@class= 'revertable-drop-container']//child::div[@id='droppable']"))).Release().Build().Perform();
         }
-        public static void dropablerunner(IJavaScriptExecutor js)
+        public static void dropablerunner( )
         {
             VScroll(200);            
             Click(PropertyType.Xpath, "//*[@class = 'element-group'][5]//child::li[4]");
             Sleep(3000);
-            SimpleDropBox(js);
+            SimpleDropBox();
             Sleep(3000);
-            AcceptTab(js);
+            AcceptTab();
             Sleep(3000);
-            AcceptableDropBox(js);
+            AcceptableDropBox();
             Sleep(3000);
-            PreventTab(js);
+            PreventTab();
             Sleep(3000);
-            PreventDropBoxOuter(js);
+            PreventDropBoxOuter();
             Sleep(3000);
-            PreventDropBoxOuterDrop(js);
+            PreventDropBoxOuterDrop();
             Sleep(3000);
-            RevertTab(js);
+            RevertTab();
             Sleep(3000);
-            WillRevert(js);
+            WillRevert();
             Sleep(3000);
-            NotRevert(js);
+            NotRevert();
 
         }
 
@@ -249,7 +249,7 @@ namespace demoqa
             action.DragAndDropToOffset(driver.FindElement(By.XPath("//*[@id= 'restrictedX']")),
                x, 0).Release().Build().Perform();
         }
-        public static void YDrag(int y, IJavaScriptExecutor js)
+        public static void YDrag(int y  )
         {
             Actions action = new Actions(driver);
             VScroll(200);
@@ -261,14 +261,14 @@ namespace demoqa
             driver.FindElement(By.XPath("//*[@id= 'draggableExample-tab-containerRestriction']")).Click();
         }
 
-        public static void ContainerBox(int x, int y, IJavaScriptExecutor js)
+        public static void ContainerBox(int x, int y  )
         {
             Actions action = new Actions(driver);
             VScroll(200);
             action.DragAndDropToOffset(driver.FindElement(By.XPath("//*[@class='draggable ui-widget-content ui-draggable ui-draggable-handle']")),
                x, y).Release().Build().Perform();
         }
-        public static void ContainerParent(int x, int y, IJavaScriptExecutor js)
+        public static void ContainerParent(int x, int y  )
         {
             Actions action = new Actions(driver);
             VScroll(200);
@@ -276,7 +276,7 @@ namespace demoqa
                x, y).Release().Build().Perform();
         }
 
-        public static void draggablerunner(IJavaScriptExecutor js)
+        public static void draggablerunner( )
         {
             VScroll(500);            
             Click(PropertyType.Xpath, "//*[@class = 'element-group'][5]//child::li[5]");
@@ -287,30 +287,30 @@ namespace demoqa
             Sleep(3000);
             XDrag(100);
             Sleep(3000);
-            YDrag(50, js);
+            YDrag(50 );
             Sleep(3000);
             ContainerTab();
             Sleep(3000);
-            ContainerBox(100, 150, js);
+            ContainerBox(100, 150);
             Sleep(3000);
-            ContainerParent(100, 50, js);
+            ContainerParent(100, 50);
         }
     }
     #endregion
     class Interaction : SeleniumSetMethod
     {
-        public static void interactionRun(IJavaScriptExecutor js)
+        public static void interactionRun( )
         {
 
-            sortable.sortablerunner(js);
+            sortable.sortablerunner();
             Sleep(3000);
-            selectable.selectablerunner(js);
+            selectable.selectablerunner();
             Sleep(3000);
-            resizable.resizablerunner(js);
+            resizable.resizablerunner();
             Sleep(3000);
-            dropable.dropablerunner(js);
+            dropable.dropablerunner();
             Sleep(3000);
-            draggable.draggablerunner(js);
+            draggable.draggablerunner();
 
         }
     }
