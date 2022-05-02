@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace demoqa
 {
-    internal class Program : PropertiesS
+    internal class Program : SeleniumSetMethod
     {
         static void Main(string[] args)
         {
@@ -21,15 +21,15 @@ namespace demoqa
             
            VScroll(200);
             Sleep(1000);
-            SeleniumSetMethod.Click(PropertyType.Xpath, "//*[@id='app']/div/div/div[2]/div/div[1]/div/div[3]");
+            Click(PropertyType.Xpath, "//*[@id='app']/div/div/div[2]/div/div[1]/div/div[3]");
             Sleep(3000);
 
             Elements.elementsRunner();
             //PropertiesS.VScroll(700);
             //ALert_Frame_Window.alert_frame_windowRunner();
-           VScroll(700);
+            VScroll(700);
             //widgets.widgetRunner();
-            //Interaction.interactionRun(js);
+            Interaction.interactionRun();
             //practicalForm.practicalformRunner(js);
 
             //bookStore.bookstoreRunner(js);
