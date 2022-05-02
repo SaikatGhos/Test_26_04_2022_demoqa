@@ -7,83 +7,83 @@ using System.Threading.Tasks;
 
 namespace demoqa
 {
-    class accordian
+    class accordian:SeleniumSetMethod
     {
-        
+
         public static void Section1()
         {
-            SeleniumSetMethod.Click("id", "section1Heading");
+            Click(PropertyType.Id, "section1Heading");
         }
         public static void Section2()
         {
-            PropertiesS.VScroll(200);
-            SeleniumSetMethod.Click("id", "section2Heading"); 
+            VScroll(200);
+            Click(PropertyType.Id, "section2Heading");
         }
         public static void Section3()
         {
-            SeleniumSetMethod.Click("id", "section3Heading");
-            
+            Click(PropertyType.Id, "section3Heading");
+
         }
         public static void accordianRunner()
         {
-            
-            SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][4]//child::li[1]");
-            PropertiesS.Sleep(2000);
+
+            Click(PropertyType.Xpath, "//*[@class = 'element-group'][4]//child::li[1]");
+            Sleep(2000);
             Section1();
-            PropertiesS.Sleep(2000);
+            Sleep(2000);
             Section2();
-            PropertiesS.Sleep(2000);
+            Sleep(2000);
             Section3();
         }
     }
-    class datePicker
+    class datePicker : SeleniumSetMethod
     {
         public static void SelectDate()
         {
-            SeleniumSetMethod.Click("id", "datePickerMonthYearInput");
-            
+            Click(PropertyType.Id, "datePickerMonthYearInput");
+
         }
         public static void SelectYear()
         {
-            SeleniumSetMethod.Click("Xpath", "//*[@class='react-datepicker__year-dropdown-container react-datepicker__year-dropdown-container--select']");
-           
+            Click(PropertyType.Xpath, "//*[@class='react-datepicker__year-dropdown-container react-datepicker__year-dropdown-container--select']");
+
         }
         public static void PickYear()
         {
-            SeleniumSetMethod.Click("Xpath", "//*[@class='react-datepicker__month-dropdown-container react-datepicker__month-dropdown-container--select']");
-            
+            Click(PropertyType.Xpath, "//*[@class='react-datepicker__month-dropdown-container react-datepicker__month-dropdown-container--select']");
+
         }
         public static void SelectMonth()
         {
-            SeleniumSetMethod.Click("Xpath", "//*[@class='react-datepicker__year-select']//child::option[96]");
-            
+            Click(PropertyType.Xpath, "//*[@class='react-datepicker__year-select']//child::option[96]");
+
         }
         public static void PickMonth()
         {
-            SeleniumSetMethod.Click("Xpath", "//*[@class='react-datepicker__month-select']//child::option[6]");
-           
+            Click(PropertyType.Xpath, "//*[@class='react-datepicker__month-select']//child::option[6]");
+
         }
         public static void PickDay()
         {
-            SeleniumSetMethod.Click("Xpath", "//*[@class='react-datepicker__week'][4]//child::div[4]");
-           
+            Click(PropertyType.Xpath, "//*[@class='react-datepicker__week'][4]//child::div[4]");
+
         }
 
         public static void DateAndTimePickerInput()
         {
-            SeleniumSetMethod.Click("id", "dateAndTimePickerInput");
-            
+            Click(PropertyType.Id, "dateAndTimePickerInput");
+
         }
 
         public static void SelectYearDateTime()
         {
-            SeleniumSetMethod.Click("Xpath", "//*[@class = 'react-datepicker__year-read-view']");
-          
+            Click(PropertyType.Xpath, "//*[@class = 'react-datepicker__year-read-view']");
+
         }
 
         public static void PickYearDateTime()
         {
-            PropertiesS.driver.FindElement
+            driver.FindElement
                   (By.XPath
                   ("//*[@class = 'react-datepicker__year-dropdown-container react-datepicker__year-dropdown-container--scroll']" +
                   "//child::div[@class = 'react-datepicker__year-option'][10]"))
@@ -91,139 +91,139 @@ namespace demoqa
         }
         public static void PickTIme()
         {
-            PropertiesS.driver.FindElement
+            driver.FindElement
                   (By.XPath("//*[@class = 'react-datepicker__time-box']//child::li[10]")).Click();
         }
         public static void dateTimeRunner()
         {
-            PropertiesS.VScroll(300);
-            SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][4]//child::li[3]");
-            PropertiesS.Sleep(2000);
+            VScroll(300);
+            Click(PropertyType.Xpath, "//*[@class = 'element-group'][4]//child::li[3]");
+            Sleep(2000);
             SelectDate();
-            PropertiesS.Sleep(2000);
+            Sleep(2000);
             SelectYear();
-            PropertiesS.Sleep(2000);
+            Sleep(2000);
             PickYear();
-            PropertiesS.Sleep(2000);
+            Sleep(2000);
             SelectMonth();
-            PropertiesS.Sleep(2000);
+            Sleep(2000);
             PickMonth();
-            PropertiesS.Sleep(2000);
+            Sleep(2000);
             PickDay();
-            PropertiesS.Sleep(2000);
+            Sleep(2000);
             DateAndTimePickerInput();
-            PropertiesS.Sleep(2000);
+            Sleep(2000);
             SelectYearDateTime();
-            PropertiesS.Sleep(2000);
+            Sleep(2000);
             PickTIme();
 
         }
     }
-    class slider
+    class slider : SeleniumSetMethod
     {
         public static void ClickSlider()
         {
-            SeleniumSetMethod.Click("Xpath", "//*[@class = 'range-slider range-slider--primary']");
-           
+            Click(PropertyType.Xpath, "//*[@class = 'range-slider range-slider--primary']");
+
         }
         public static void MoveSlider(int x)
         {
             for (int i = 1; i <= x; i++)
             {
-                SeleniumSetMethod.SendKeys("Xpath", "//*[@class = 'range-slider range-slider--primary']", Keys.ArrowRight);
-                
+                SendKeys(PropertyType.Xpath, "//*[@class = 'range-slider range-slider--primary']", Keys.ArrowRight);
+
             }
         }
         public static void sliderRunner()
         {
-            PropertiesS.VScroll(300);
-            SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][4]//child::li[4]");
-            PropertiesS.Sleep(2000);
+            VScroll(300);
+            Click(PropertyType.Xpath, "//*[@class = 'element-group'][4]//child::li[4]");
+            Sleep(2000);
             ClickSlider();
-            PropertiesS.Sleep(2000);
+            Sleep(2000);
             MoveSlider(40);
         }
     }
-    class progressBar
+    class progressBar : SeleniumSetMethod
     {
         public static void StartProgressBar()
         {
-            SeleniumSetMethod.Click("Xpath", "//*[@id= 'startStopButton']");
-           
+            Click(PropertyType.Xpath, "//*[@id= 'startStopButton']");
+
         }
         public static void StopProgressBar()
         {
-            SeleniumSetMethod.Click("Xpath", "//*[@id= 'startStopButton']");
-            
+            Click(PropertyType.Xpath, "//*[@id= 'startStopButton']");
+
         }
         public static void progessRunner()
         {
-            PropertiesS.VScroll(300);
-            SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][4]//child::li[5]");
-            PropertiesS.Sleep(2000);
+            VScroll(300);
+            Click(PropertyType.Xpath, "//*[@class = 'element-group'][4]//child::li[5]");
+            Sleep(2000);
             StartProgressBar();
-            PropertiesS.Sleep(5000);
+            Sleep(5000);
             StartProgressBar();
         }
     }
-    class tabs
+    class tabs : SeleniumSetMethod
     {
         public static void OriginTab()
         {
-            SeleniumSetMethod.Click("Xpath", "//*[@id= 'demo-tab-origin']");
-           
+            Click(PropertyType.Xpath, "//*[@id= 'demo-tab-origin']");
+
         }
         public static void UseTab()
         {
-            SeleniumSetMethod.Click("Xpath", "//*[@id= 'demo-tab-use']");
-           
+            Click(PropertyType.Xpath, "//*[@id= 'demo-tab-use']");
+
         }
         public static void WhatTab()
         {
-            SeleniumSetMethod.Click("Xpath", "//*[@id= 'demo-tab-what']");
-            
+            Click(PropertyType.Xpath, "//*[@id= 'demo-tab-what']");
+
         }
         public static void tabRunner(IJavaScriptExecutor js)
         {
-            PropertiesS.VScroll(300);
-            SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][4]//child::li[6]");
-            PropertiesS.Sleep(2000);
+            VScroll(300);
+            Click(PropertyType.Xpath, "//*[@class = 'element-group'][4]//child::li[6]");
+            Sleep(2000);
             OriginTab();
-            PropertiesS.Sleep(2000);
+            Sleep(2000);
             UseTab();
-            PropertiesS.Sleep(2000);
+            Sleep(2000);
             WhatTab();
         }
     }
-    class tooltip
+    class tooltip : SeleniumSetMethod
     {
-        
+
         public static void HoverButton(String javaScript)
         {
-            IJavaScriptExecutor executor = PropertiesS.driver as IJavaScriptExecutor;
+            IJavaScriptExecutor executor = driver as IJavaScriptExecutor;
             executor.ExecuteScript
-                (javaScript, PropertiesS.driver.FindElement
+                (javaScript, driver.FindElement
                 (By.XPath("//*[@id= 'toolTipButton']")));
         }
         public static void HoverTextField(String javaScript)
         {
-            IJavaScriptExecutor executor = PropertiesS.driver as IJavaScriptExecutor;
+            IJavaScriptExecutor executor = driver as IJavaScriptExecutor;
             executor.ExecuteScript
-                (javaScript, PropertiesS.driver.FindElement
+                (javaScript, driver.FindElement
                 (By.XPath("//*[@id= 'toolTipTextField']")));
         }
         public static void HoverText(String javaScript)
         {
-            IJavaScriptExecutor executor = PropertiesS.driver as IJavaScriptExecutor;
+            IJavaScriptExecutor executor = driver as IJavaScriptExecutor;
             executor.ExecuteScript
-                (javaScript, PropertiesS.driver.FindElement
+                (javaScript, driver.FindElement
                 (By.XPath("//*[@id= 'texToolTopContainer']//child::a[1]")));
         }
         public static void HoverText2(String javaScript)
         {
-            IJavaScriptExecutor executor = PropertiesS.driver as IJavaScriptExecutor;
+            IJavaScriptExecutor executor = driver as IJavaScriptExecutor;
             executor.ExecuteScript
-                (javaScript, PropertiesS.driver.FindElement
+                (javaScript, driver.FindElement
                 (By.XPath("//*[@id= 'texToolTopContainer']//child::a[2]")));
         }
         public static void tooltipRunner()
@@ -233,69 +233,69 @@ namespace demoqa
                  "false, false, false, false, 0, null);" +
                  "arguments[0].dispatchEvent(evObj);";
 
-            PropertiesS.VScroll(500);
-            SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][4]//child::li[7]");            
-            PropertiesS.Sleep(2000);
+            VScroll(500);
+            Click(PropertyType.Xpath, "//*[@class = 'element-group'][4]//child::li[7]");
+            Sleep(2000);
             HoverButton(javaScript);
-            PropertiesS.Sleep(2000);
+            Sleep(2000);
             HoverTextField(javaScript);
-            PropertiesS.VScroll(100);
-            PropertiesS.Sleep(2000);
+            VScroll(100);
+            Sleep(2000);
             HoverText(javaScript);
-            PropertiesS.VScroll(100);
-            PropertiesS.Sleep(2000);
+            VScroll(100);
+            Sleep(2000);
             HoverText2(javaScript);
 
         }
     }
-    class menu
+    class menu : SeleniumSetMethod
     {
         public static void MainItem1()
         {
-            SeleniumSetMethod.Click("LinkText", "Main Item 1");
+            Click(PropertyType.LinkText, "Main Item 1");
 
         }
         public static void MainItem2()
         {
-            SeleniumSetMethod.Click("LinkText", "Main Item 2");
-            
+            Click(PropertyType.LinkText, "Main Item 2");
+
         }
         public static void SubList()
         {
-            SeleniumSetMethod.Click("Xpath", "//*[text() = 'SUB SUB LIST »']");
-            
+            Click(PropertyType.Xpath, "//*[text() = 'SUB SUB LIST »']");
+
         }
         public static void SubItem2()
         {
-            SeleniumSetMethod.Click("Xpath", "//*[text() = 'SUB SUB LIST »']");
-            
+            Click(PropertyType.Xpath, "//*[text() = 'SUB SUB LIST »']");
+
         }
         public static void MainItem3()
         {
-            SeleniumSetMethod.Click("LinkText", "Main Item 3");
+            Click(PropertyType.LinkText, "Main Item 3");
 
         }
         public static void menuRunner()
         {
-            PropertiesS.VScroll(800);
-            SeleniumSetMethod.Click("Xpath", "//*[@class = 'element-group'][4]//child::li[8]");
-            PropertiesS.Sleep(2000);
+            VScroll(800);
+            Click(PropertyType.Xpath, "//*[@class = 'element-group'][4]//child::li[8]");
+            Sleep(2000);
             MainItem1();
-            PropertiesS.Sleep(2000);
+            Sleep(2000);
             MainItem2();
-            PropertiesS.Sleep(2000);
+            Sleep(2000);
             SubList();
-            PropertiesS.Sleep(2000);
+            Sleep(2000);
             SubItem2();
-            PropertiesS.Sleep(2000);
+            Sleep(2000);
             MainItem3();
         }
     }
-     class widgets
+    class widgets : SeleniumSetMethod
     {
         public static void widgetRunner()
-        {            
-            PropertiesS.VScroll(200);
+        {
+            VScroll(200);
             //accordian.accordianRunner();
             datePicker.dateTimeRunner();
             slider.sliderRunner();
