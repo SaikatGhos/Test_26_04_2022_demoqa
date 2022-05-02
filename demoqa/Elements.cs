@@ -11,149 +11,147 @@ namespace demoqa
 {
     
         
-        class textBox
+        class textBox :SeleniumSetMethod
         {
             public static void FullName(string fullName)
             {
-                SeleniumSetMethod.SendKeys(PropertyType.Id, "userName", fullName);
+                SendKeys(PropertyType.Id, "userName", fullName);
             }
 
             public static void Email(string email)
             {
-                SeleniumSetMethod.SendKeys(PropertyType.Id, "userEmail", email);
-
+                SendKeys(PropertyType.Id, "userEmail", email);
             }
 
             public static void CurrentAddress(string currentAddress)
             {
-                SeleniumSetMethod.SendKeys(PropertyType.Id, "currentAddress", currentAddress);
+                SendKeys(PropertyType.Id, "currentAddress", currentAddress);
 
             }
 
             public static void PermanentAddress(string permanentAddress)
             {
-                SeleniumSetMethod.SendKeys(PropertyType.Id, "permanentAddress", permanentAddress);
-
+                SendKeys(PropertyType.Id, "permanentAddress", permanentAddress);
             }
 
             public static void SubmitButton()
             {
-            PropertiesS.VScroll(300);            
-                SeleniumSetMethod.Click(PropertyType.Xpath, "//button[@class='btn btn-primary']");
+            VScroll(300);            
+            Click(PropertyType.Xpath, "//button[@class='btn btn-primary']");
             }
             public static void textboxRunner()
             {
-                SeleniumSetMethod.Click(PropertyType.Xpath, "//*[@class = 'element-group'][1]//child::li[1]");
-                PropertiesS.Sleep(2000);
+            Click(PropertyType.Xpath, "//*[@class = 'element-group'][1]//child::li[1]");
+                Sleep(2000);
                 FullName("Charls");
-                PropertiesS.Sleep(500);
+                Sleep(500);
                 Email("c@gmail.com");
-                PropertiesS.Sleep(500);
+                Sleep(500);
                 PermanentAddress("Kolakta");
-                PropertiesS.Sleep(500);
+                Sleep(500);
                 CurrentAddress("Delhi");
-                PropertiesS.Sleep(500);
+                Sleep(500);
                 SubmitButton();
-                PropertiesS.VScroll(200);
+                VScroll(200);
             }
         }
-        class checkBox
+        class checkBox:SeleniumSetMethod
         {
             public static void ToggleHome()
             {
-                SeleniumSetMethod.Click(PropertyType.Xpath, "//*[@aria-label='Toggle']");
+                Click(PropertyType.Xpath, "//*[@aria-label='Toggle']");
                 
             }
             public static void ToggleDownloads()
             {
-                SeleniumSetMethod.Click(PropertyType.Xpath, "//*[@id='tree-node']//descendant::button[@aria-label='Toggle'][4]");
+                Click(PropertyType.Xpath, "//*[@id='tree-node']//descendant::button[@aria-label='Toggle'][4]");
                 
             }
             public static void CheckBoxDownloads()
             {
-                SeleniumSetMethod.Click(PropertyType.Xpath, "//*[@id='tree-node']//descendant::span[@class='rct-checkbox'][4]");                
+                Click(PropertyType.Xpath, "//*[@id='tree-node']//descendant::span[@class='rct-checkbox'][4]");                
             }
 
             public static void CollapseAll()
             {
-                SeleniumSetMethod.Click(PropertyType.Xpath, "//*[@aria-label='Collapse all']");                
+                Click(PropertyType.Xpath, "//*[@aria-label='Collapse all']");                
             }
             public static void checkBoxRunner()
             {
             
-            PropertiesS.VScroll(300);
-            SeleniumSetMethod.Click(PropertyType.Xpath, "//*[@class = 'element-group'][1]//child::li[2]");
-                PropertiesS.Sleep(2000);
+            VScroll(300);
+            Click(PropertyType.Xpath, "//*[@class = 'element-group'][1]//child::li[2]");
+             Sleep(2000);
                 ToggleHome();
-                PropertiesS.Sleep(2000);
+             Sleep(2000);
                 ToggleDownloads();
-                PropertiesS.Sleep(2000);
+             Sleep(2000);
                 CheckBoxDownloads();
-                PropertiesS.Sleep(2000);
+             Sleep(2000);
                 CollapseAll();
             }
         }
-        class radioButton
+        class radioButton:SeleniumSetMethod
         {
            
             public static void PressYesButton()
             {
-                SeleniumSetMethod.Click(PropertyType.Xpath, "//*[@class='custom-control custom-radio custom-control-inline'][1]");
+                Click(PropertyType.Xpath, "//*[@class='custom-control custom-radio custom-control-inline'][1]");
                 
             }
             public static void PressImpressiveButton()
             {
-                SeleniumSetMethod.Click(PropertyType.Xpath, "//*[@class='custom-control custom-radio custom-control-inline'][2]");
+                Click(PropertyType.Xpath, "//*[@class='custom-control custom-radio custom-control-inline'][2]");
 
             }
             public static void radioButtonRunner()
             {
-                SeleniumSetMethod.Click(PropertyType.Xpath, "//*[@class = 'element-group'][1]//child::li[3]");
-                PropertiesS.Sleep(2000);
+                Click(PropertyType.Xpath, "//*[@class = 'element-group'][1]//child::li[3]");
+                Sleep(2000);
                 PressYesButton();
-                PropertiesS.Sleep(2000);
+                Sleep(2000);
                 PressImpressiveButton();
             }
         }
        
-        class webTables
+        class webTables:SeleniumSetMethod
         {
             public static void AddNewRecordButton()
             {
-                SeleniumSetMethod.Click(PropertyType.Id, "addNewRecordButton");                
+                Click(PropertyType.Id, "addNewRecordButton");                
             }
             public static void FirstName(string firstName)
             {
-                SeleniumSetMethod.SendKeys(PropertyType.Id, "firstName", firstName);                
+                SendKeys(PropertyType.Id, "firstName", firstName);                
             }
             public static void LastName(string lastName)
             {
-                SeleniumSetMethod.SendKeys(PropertyType.Id, "lastName", lastName);
+                SendKeys(PropertyType.Id, "lastName", lastName);
                 
             }
             public static void Email(string email)
             {
-                SeleniumSetMethod.SendKeys(PropertyType.Id, "userEmail", email);
+               SendKeys(PropertyType.Id, "userEmail", email);
                 
             }
             public static void Age(string age)
             {
-                SeleniumSetMethod.SendKeys(PropertyType.Id, "age", age);
+                SendKeys(PropertyType.Id, "age", age);
                 
             }
             public static void Salary(string salary)
             {
-                SeleniumSetMethod.SendKeys(PropertyType.Id, "salary", salary);
+                SendKeys(PropertyType.Id, "salary", salary);
                 
             }
             public static void Department(string department)
             {
-                SeleniumSetMethod.SendKeys(PropertyType.Id, "department", department);
+                SendKeys(PropertyType.Id, "department", department);
                 
             }
             public static void SubmitBtn()
             {
-                SeleniumSetMethod.Click(PropertyType.Id, "submit");                
+                Click(PropertyType.Id, "submit");                
             }
             public static void add10Records()
             {
@@ -165,222 +163,222 @@ namespace demoqa
                 string[] dept = { "phy", "chem", "cs", "ca", "math", "bios", "pols", "polity", "goe", "hist", };
                for(int i = 0; i < 10; i++)
                 {
-                    PropertiesS.Sleep(2000);
+                    Sleep(2000);
                     AddNewRecordButton();
-                    PropertiesS.Sleep(1000);
+                    Sleep(1000);
                     FirstName(firstName[i]);
-                    PropertiesS.Sleep(1000);
+                    Sleep(1000);
                     LastName(lastName[i]);
-                    PropertiesS.Sleep(1000);
+                    Sleep(1000);
                     Email(email[i]);
-                    PropertiesS.Sleep(1000);
+                    Sleep(1000);
                     Age(age[i]);
-                    PropertiesS.Sleep(1000);
+                    Sleep(1000);
                     Salary(sal[i]);
-                    PropertiesS.Sleep(1000);
+                    Sleep(1000);
                     Department(dept[i]);
-                    PropertiesS.Sleep(1000);
+                    Sleep(1000);
                     SubmitBtn();
                 }
-            PropertiesS.VScroll(700);            
-                PropertiesS.Sleep(2000);
-                SeleniumSetMethod.Click(PropertyType.Xpath, "//button[text()='Next']");
-                PropertiesS.Sleep(2000);
-                SeleniumSetMethod.Click(PropertyType.Xpath, "//button[text()='Previous']");
+            VScroll(700);            
+                Sleep(2000);
+                Click(PropertyType.Xpath, "//button[text()='Next']");
+                Sleep(2000);
+               Click(PropertyType.Xpath, "//button[text()='Previous']");
             }
             public static void DeleteRecord()
             {
-                SeleniumSetMethod.Click(PropertyType.Id, "delete-record-1");                
+                Click(PropertyType.Id, "delete-record-1");                
             }
 
             public static void SearchBox(string searchBox)
             {
-                SeleniumSetMethod.SendKeys(PropertyType.Id, "searchBox", searchBox);                
+                SendKeys(PropertyType.Id, "searchBox", searchBox);                
             }
 
             public static void EditRecord()
             {
-                SeleniumSetMethod.Click(PropertyType.Id, "edit-record-4");               
+                Click(PropertyType.Id, "edit-record-4");               
             }
 
             public static void ClearSalary()
             {
-                SeleniumSetMethod.Clear(PropertyType.Id, "salary");                
+                Clear(PropertyType.Id, "salary");                
             }
 
             public static void EditSalary(string salary)
             {
-                SeleniumSetMethod.SendKeys(PropertyType.Id, "salary",salary);                
+                SendKeys(PropertyType.Id, "salary",salary);                
             }
 
             public static void SubmitBtnEdit()
             {
-                SeleniumSetMethod.Click(PropertyType.Id, "submit");               
+                Click(PropertyType.Id, "submit");               
             }
             public static void EditArecord()
             {
                 EditRecord();
-                PropertiesS.Sleep(2000);
+                Sleep(2000);
                 ClearSalary();
-                PropertiesS.Sleep(2000);
+                Sleep(2000);
                 EditSalary("3000");
-                PropertiesS.Sleep(2000);
+                Sleep(2000);
                 SubmitBtnEdit();
             }
             public static void webtableRunner()
             {
-                SeleniumSetMethod.Click(PropertyType.Xpath, "//*[@class = 'element-group'][1]//child::li[4]");
-                PropertiesS.Sleep(2000);
+                Click(PropertyType.Xpath, "//*[@class = 'element-group'][1]//child::li[4]");
+                Sleep(2000);
                 add10Records();
-                PropertiesS.Sleep(2000);
+                Sleep(2000);
                 SearchBox("Vega");
-                PropertiesS.Sleep(2000);
+                Sleep(2000);
                 EditArecord();
-                PropertiesS.Sleep(2000);
+                Sleep(2000);
                 DeleteRecord();
             }
         }
-        class button
+        class button:SeleniumSetMethod
         {
             public static void doubleClick()
             {
-            PropertiesS.VScroll(50);
+            VScroll(50);
             
-                Actions action = new Actions(PropertiesS.driver);
-                action.MoveToElement(PropertiesS.driver.FindElement(By.XPath("//button[@id='doubleClickBtn']")))
+                Actions action = new Actions(driver);
+                action.MoveToElement(driver.FindElement(By.XPath("//button[@id='doubleClickBtn']")))
                     .DoubleClick().Build().Perform();
                 
-            PropertiesS.VScroll(150);
-            PropertiesS.Sleep(2000);
+            VScroll(150);
+            Sleep(2000);
             }
             public static void rightClick()
             {
-            PropertiesS.VScroll(50);
+            VScroll(50);
             
-                Actions action = new Actions(PropertiesS.driver);
-                action.MoveToElement(PropertiesS.driver.FindElement(By.XPath("//button[@id='rightClickBtn']")))
+                Actions action = new Actions(driver);
+                action.MoveToElement(driver.FindElement(By.XPath("//button[@id='rightClickBtn']")))
                     .ContextClick().Build().Perform();
-            PropertiesS.VScroll(150);
-            PropertiesS.Sleep(5000);
+           VScroll(150);
+            Sleep(5000);
             }
             public static void dynamicClick()
             {
-            PropertiesS.VScroll(200);
+            VScroll(200);
             
-                Actions action = new Actions(PropertiesS.driver);
-                action.MoveToElement(PropertiesS.driver.FindElement(By.XPath("//button[text()='Click Me']")))
+                Actions action = new Actions(driver);
+                action.MoveToElement(driver.FindElement(By.XPath("//button[text()='Click Me']")))
                     .Click().Build().Perform();
-            PropertiesS.VScroll(150);
+            VScroll(150);
             
-                PropertiesS.Sleep(3000);
+                Sleep(3000);
             }
             public static void buttonRunner()
             {
-            PropertiesS.VScroll(150);
+            VScroll(150);
             
-            SeleniumSetMethod.Click(PropertyType.Xpath, "//*[@class = 'element-group'][1]//child::li[5]");
-                PropertiesS.Sleep(3000);
+            Click(PropertyType.Xpath, "//*[@class = 'element-group'][1]//child::li[5]");
+                Sleep(3000);
                 doubleClick();
-                PropertiesS.Sleep(2000);
+                Sleep(2000);
                 rightClick();
-                PropertiesS.Sleep(2000);
+                Sleep(2000);
                 dynamicClick();
-            PropertiesS.VScroll(200);
+            VScroll(200);
             
         }
         }
         #region Links
-        class links
+        class links:SeleniumSetMethod
         {
             public static void openNew()
             {
-            PropertiesS.VScroll(500);
+            VScroll(500);
             
-                SeleniumSetMethod.Click(PropertyType.Id, "item-5");
-                PropertiesS.Sleep(3000);
-                SeleniumSetMethod.Click(PropertyType.Id, "simpleLink");
-                PropertiesS.Sleep(3000);                
-                PropertiesS.driver.Navigate().GoToUrl("https://demoqa.com/links");
-                PropertiesS.Sleep(2000);
-                SeleniumSetMethod.Click(PropertyType.Id, "dynamicLink");                
+                Click(PropertyType.Id, "item-5");
+                Sleep(3000);
+                Click(PropertyType.Id, "simpleLink");
+                Sleep(3000);                
+                driver.Navigate().GoToUrl("https://demoqa.com/links");
+                Sleep(2000);
+                Click(PropertyType.Id, "dynamicLink");                
             }
             public static void callApi()
             {
-            PropertiesS.VScroll(500);
+            VScroll(500);
             
                 
-                SeleniumSetMethod.Click(PropertyType.Xpath, "//a[@id='created']");
+                Click(PropertyType.Xpath, "//a[@id='created']");
                
-                PropertiesS.Sleep(2000);
-            PropertiesS.VScroll(200);
+                Sleep(2000);
+            VScroll(200);
             
-                SeleniumSetMethod.Click(PropertyType.Xpath, "//a[@id='no-content']");
+                Click(PropertyType.Xpath, "//a[@id='no-content']");
                 
-                PropertiesS.Sleep(2000);
-            PropertiesS.VScroll(200);
-            SeleniumSetMethod.Click(PropertyType.Xpath, "//a[@id='moved']");
+                Sleep(2000);
+            VScroll(200);
+            Click(PropertyType.Xpath, "//a[@id='moved']");
                 
-                PropertiesS.Sleep(2000);
-            PropertiesS.VScroll(200);
-            SeleniumSetMethod.Click(PropertyType.Xpath, "//a[@id='bad-request']");
+                Sleep(2000);
+            VScroll(200);
+            Click(PropertyType.Xpath, "//a[@id='bad-request']");
                 
-                PropertiesS.Sleep(2000);
-            PropertiesS.VScroll(200);
-            SeleniumSetMethod.Click(PropertyType.Xpath, "//a[@id='unauthorized']");
+                Sleep(2000);
+            VScroll(200);
+            Click(PropertyType.Xpath, "//a[@id='unauthorized']");
                 
-                PropertiesS.Sleep(2000);
-            PropertiesS.VScroll(200);
-            SeleniumSetMethod.Click(PropertyType.Xpath, "//a[@id='forbidden']");
+                Sleep(2000);
+            VScroll(200);
+            Click(PropertyType.Xpath, "//a[@id='forbidden']");
                 
-                PropertiesS.Sleep(2000);
-            PropertiesS.VScroll(200);
-            SeleniumSetMethod.Click(PropertyType.Xpath, "//a[@id='invalid-url']");
+                Sleep(2000);
+            VScroll(200);
+            Click(PropertyType.Xpath, "//a[@id='invalid-url']");
               
-                PropertiesS.Sleep(2000);
+                Sleep(2000);
             }
                 public static void linksRunner()
             {
-                SeleniumSetMethod.Click(PropertyType.Xpath, "//*[@class = 'element-group'][1]//child::li[6]");
-                PropertiesS.Sleep(3000);
+                Click(PropertyType.Xpath, "//*[@class = 'element-group'][1]//child::li[6]");
+                Sleep(3000);
                 openNew();
-                PropertiesS.Sleep(5000);
+                Sleep(5000);
                 callApi();
 
             }
         }
         #endregion
-        class brokenLinks
+        class brokenLinks:SeleniumSetMethod
         {
             public static void ValidLink()
             {
-                SeleniumSetMethod.Click(PropertyType.Xpath, "//*[@class='col-12 mt-4 col-md-6']//child::div[a]//child::a[1]");                
+                Click(PropertyType.Xpath, "//*[@class='col-12 mt-4 col-md-6']//child::div[a]//child::a[1]");                
             }
             public static void BrokenLink()
             {
-                SeleniumSetMethod.Click(PropertyType.Xpath, "//*[@class='col-12 mt-4 col-md-6']//child::div[a]//child::a[2]");                
+                Click(PropertyType.Xpath, "//*[@class='col-12 mt-4 col-md-6']//child::div[a]//child::a[2]");                
             }
             public static void brokenLinksRunner(IJavaScriptExecutor js)
             {
-            PropertiesS.VScroll(300);
-            SeleniumSetMethod.Click(PropertyType.Xpath, "//*[@class = 'element-group'][1]//child::li[7]");
+            VScroll(300);
+            Click(PropertyType.Xpath, "//*[@class = 'element-group'][1]//child::li[7]");
                 ValidLink();
-                PropertiesS.Sleep(2000);
+                Sleep(2000);
                 BrokenLink();
             }
         }
-        class upLoad_dnload
+        class upLoad_dnload:SeleniumSetMethod
         {
             public static void download()
             {
                 try
                 {
-                PropertiesS.VScroll(500);
+                VScroll(500);
                 
-                    SeleniumSetMethod.Click(PropertyType.Xpath, "//a[@id='downloadButton']");
-                    PropertiesS.Sleep(2000);
+                    Click(PropertyType.Xpath, "//a[@id='downloadButton']");
+                    Sleep(2000);
                     ChromeOptions opt = new ChromeOptions();
                     opt.AddUserProfilePreference("download.default_directory", @"C:\Users\SAIKAT\Downloads");
-                    PropertiesS.driver = new ChromeDriver(@"C:\Users\SAIKAT\Downloads", opt);
+                    driver = new ChromeDriver(@"C:\Users\SAIKAT\Downloads", opt);
                 }
                 catch (Exception e)
                 {
@@ -389,79 +387,79 @@ namespace demoqa
             }
             public static void upload()
             {
-            PropertiesS.VScroll(500);
+            VScroll(500);
             
-                SeleniumSetMethod.SendKeys(PropertyType.Xpath, "//input[@type='file']", "E:\\5thSem_admitcard.pdf");
-                PropertiesS.Sleep(3000);
+                SendKeys(PropertyType.Xpath, "//input[@type='file']", "E:\\5thSem_admitcard.pdf");
+                Sleep(3000);
                 
             }
             public static void upLoad_dnloadRunner()
             {
-            PropertiesS.VScroll(400);
+            VScroll(400);
             
-                SeleniumSetMethod.Click(PropertyType.Xpath, "//*[@class = 'element-group'][1]//child::li[8]");
-                PropertiesS.Sleep(2000);
+                Click(PropertyType.Xpath, "//*[@class = 'element-group'][1]//child::li[8]");
+                Sleep(2000);
                 download();
-                PropertiesS.Sleep(7000);
+                Sleep(7000);
                 upload();
             }
         }
-        class dynamicProp
+        class dynamicProp:SeleniumSetMethod
         {
             public static void EnableBtn()
             {
-                SeleniumSetMethod.Click(PropertyType.Id, "enableAfter");                
+                Click(PropertyType.Id, "enableAfter");                
             }
             public static void ChangeColorBtn()
             {
-                SeleniumSetMethod.Click(PropertyType.Id, "colorChange");                
+                Click(PropertyType.Id, "colorChange");                
             }
             public static void VisibleAfterBtn()
             {
-                SeleniumSetMethod.Click(PropertyType.Id, "visibleAfter");                
+                Click(PropertyType.Id, "visibleAfter");                
             }
             public static void dynamicPropRunner()
             {
-            PropertiesS.VScroll(300);
-            SeleniumSetMethod.Click(PropertyType.Xpath, "//*[@class = 'element-group'][1]//child::li[9]");
-                PropertiesS.Sleep(2000);
+            VScroll(300);
+            Click(PropertyType.Xpath, "//*[@class = 'element-group'][1]//child::li[9]");
+                Sleep(2000);
                 EnableBtn();
-                PropertiesS.Sleep(5000);
-            PropertiesS.VScroll(200);
+                Sleep(5000);
+            VScroll(200);
             ChangeColorBtn();
-                PropertiesS.Sleep(7000);
+                Sleep(7000);
                 VisibleAfterBtn();
-                PropertiesS.Sleep(7000);
+                Sleep(7000);
         }
         }
-    class Elements
+    class Elements:SeleniumSetMethod
     {
         public static void elementsRunner()
         {
             textBox.textboxRunner();
-            PropertiesS.Sleep(10000);
+            Sleep(10000);
             checkBox.checkBoxRunner();
-            PropertiesS.Sleep(10000);
+            Sleep(10000);
             radioButton.radioButtonRunner();
-            PropertiesS.Sleep(10000);
-            PropertiesS.VScroll(200);
+            Sleep(10000);
+            VScroll(200);
             
             webTables.webtableRunner();
-            PropertiesS.Sleep(10000);
-            PropertiesS.VScroll(200);
+            Sleep(10000);
+            VScroll(200);
             
             button.buttonRunner();
-            PropertiesS.Sleep(10000);
+            Sleep(10000);
             //links.linksRunner(js);
-            PropertiesS.Sleep(10000);
+            Sleep(10000);
             //js.ExecuteScript("window.scrollBy(0,500)");
             //brokenLinks.BrokenLink();
-            PropertiesS.Sleep(10000);
-            PropertiesS.VScroll(200);
+            Sleep(10000);
+            VScroll(200);
             
             upLoad_dnload.upLoad_dnloadRunner();
-            PropertiesS.Sleep(10000);
-            PropertiesS.VScroll(200);
+            Sleep(10000);
+            VScroll(200);
             
             dynamicProp.dynamicPropRunner();
             
